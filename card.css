@@ -1,0 +1,63 @@
+.card {
+  float: left;
+  font-size: 0.8em;
+  height: 200px;
+  margin: 20px;
+  perspective: 600px;
+  position: relative;
+  width: 200px;
+}
+
+.card .front {
+  backface-visibility: hidden;
+  background: #6b7077 none repeat scroll 0 0;
+  border: 1px solid #cccccc;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
+  float: none;
+  height: inherit;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  transform: rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: all .5s ease-in-out 0s;
+  width: inherit;
+  z-index: 900;
+  overflow: hidden;
+}
+
+.card .back {
+  backface-visibility: hidden;
+  background: #BD0D0D none repeat scroll 0 0;
+  border: 1px solid #cccccc;
+  float: none;
+  height: inherit;
+  left: 0;
+  position: absolute;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  top: 0;
+  transform: rotateY(-179deg);
+  transform-style: preserve-3d;
+  transition: all .5s ease-in-out 0s;
+  width: inherit;
+  z-index: 800;
+  text-align: center;
+}
+
+.card.flip .front,
+.card:hover .front {
+  background: #333333 none repeat scroll 0 0;
+  border-color: #eeeeee;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  transform: rotateY(180deg);
+  z-index: 900;
+}
+
+.card.flip .back,
+.card:hover .back {
+  background: #BD0D0D none repeat scroll 0 0;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  transform: rotateX(0deg) rotateY(0deg);
+  z-index: 1000;
+}
